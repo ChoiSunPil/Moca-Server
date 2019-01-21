@@ -11,7 +11,8 @@ import java.util.List;
 public interface HotPlaceMapper {
 
     //HotPlace 리스트 조회
-    @Select("SELECT * FROM HOT_PLACE")
+    @Select("select distinct hot_place_id, hot_place_name, hot_place_img " +
+            "from CAFE natural join HOT_PLACE")
     List<HotPlace>findAllHotPlace();
 
 
